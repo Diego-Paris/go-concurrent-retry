@@ -43,4 +43,4 @@ An example using the ConcurrentRetry function
 Pull requests are welcome.
 
 ## License
-[MIT]()
+[MIT](https://github.com/Diego-Paris/go-concurrent-retry/blob/master/LICENSE)
