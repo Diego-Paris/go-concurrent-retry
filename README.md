@@ -14,7 +14,7 @@ For more information about installing Go, visit [golang.org/doc/install](https:/
 
 ## Installation
 ```bash
-git clone ...
+git clone https://github.com/Diego-Paris/go-concurrent-retry
 ```
 
 ## Usage
@@ -29,10 +29,11 @@ An example using the ConcurrentRetry function
   workers := 3
   retries := 5
 
-  // Returns a channel where the
-  // results can be collected from
+  // Returns a channel
   results := ConcurrentRetry(tasks, workers, retries)
 
+  // Collect results from channel until the
+  // buffer is empty and successfully closed
   for r := range results {
     fmt.Println("Result received from goroutine:", r)
   }
