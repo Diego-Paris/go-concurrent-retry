@@ -28,7 +28,9 @@ func main() {
 		tasks = append(tasks, coding)
 	}
 
-	results := ConcurrentRetry(tasks, 3, 5)
+	// ConcurrentRetry(tasks, workers, attempts)
+	// 
+	results := ConcurrentRetry(tasks, 2, 1)
 
 	for r := range results {
 		fmt.Println("Result received from thread:", r)
@@ -57,7 +59,6 @@ func coding() (string, error) {
 }
 
 func worker(id int, threads <-chan Job, results chan<- Result, retry int, wg *sync.WaitGroup) {
-	//TODO
 
 	//for each job in the threads channel
 	for job := range threads {	
